@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Demo Webpage</title>
+	<script src=" {{ url_for('static', filename='webchat-0.5.9.js') }} "></script>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body style="background-image: url( {{ url_for( 'static', filename= 'birds.jpg') }} );"> 
+
+
+	<span class='footer' >
+		Image by <a href="https://pixabay.com/users/Free-Photos-242387/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=731213"  target="_blank" >Free-Photos</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=731213"  target="_blank" >Pixabay</a>
+		<div>
+			Icons made by <a href="https://www.flaticon.com/authors/freepik" target="_blank" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"  target="_blank" title="Flaticon">www.flaticon.com</a> and licensed by <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+		</div>
+	</span>
+	<div id="webchat"/>
+
+	<script>
+	  WebChat.default.init({
+	    selector: "#webchat",
+	    initPayload: "hello", //first message to solicit bot response
+	    interval: 1000, // 1000 ms between each message
+	    customData: {"userId": "123"}, // arbitrary custom data. Stay minimal as this will be added to the socket
+	    socketUrl: "http://localhost:5005",//url to your Rasa server
+	    socketPath: "/socket.io/",
+	    title: "Title", // e.g. a name for your chatbot
+	    subtitle: "Subtitle", 
+	    inputTextFieldHint: "Type a message...",
+	    connectingText: "Waiting for server...",
+	    hideWhenNotConnected: true,
+	    fullScreenMode: false,
+	    profileAvatar: "{{ url_for('static', filename='owl.png') }}",
+	    openLauncherImage: "{{ url_for('static', filename='chat.png') }}",
+	    closeLauncherImage: "{{ url_for('static', filename='chat.png') }}",
+	    params: {
+	      images: {
+	        dims: {
+	          width: 300,
+	          height: 200,
+	        }
+	      },
+	      storage: "session"
+	    }
+	  })
+	</script>
+</body>
+</html>

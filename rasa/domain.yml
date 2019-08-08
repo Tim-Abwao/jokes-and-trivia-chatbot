@@ -1,0 +1,76 @@
+intents:
+- affirm
+- continue
+- deny
+- get_day_facts
+- get_jokes
+- get_math_facts
+- goodbye
+- greet
+- mood_great
+- mood_unhappy
+- say_name
+- switch
+entities:
+- mood_great
+- name
+- mood_unhappy
+slots:
+  fname:
+    type: text
+    initial_value: ' '
+  name:
+    type: text
+    initial_value: ' '
+templates:
+  utter_greet:
+  - text: Hey there! 🙂️. How's the going?
+  - text: Hi! How are you?
+  - text: Hey! How's your day going?
+  utter_cheer_up:
+  - text: Sad to hear that. Don't let that get you down though.
+  - text: Oh well, all storms clear out eventually... just hang in there 💪️!
+  utter_happy:
+  - text: Awesome 🙂️
+  - text: Cool 🙂️
+  - text: Great! 🙂️
+  utter_goodbye:
+  - text: Bye {name}, till next time...
+  - text: Adios {name}, hasta la vista...
+  utter_game:
+  - text: Okay {fname}, wanna hear a joke or learn something new?
+  utter_game_types:
+  - text: So which will it be?
+    buttons:
+    - title: Random math facts
+      payload: mathematics trivia
+    - title: Today in history...
+      payload: Today in history
+    - title: Fetch a joke
+      payload: humorous jokes
+  utter_ask_name:
+  - text: So... what's your name...?
+  - text: Hey what's your name...?
+  utter_more:
+  - text: Want some more?
+    buttons:
+    - title: Yes, continue
+      payload: continue same activity
+    - title: Switch to something else
+      payload: Switch to something else
+  utter_how_to_stop:
+  - When you wanna stop, just say 'Bye'...
+actions:
+- action_get_date_fact
+- action_get_joke
+- action_get_math_fact
+- action_get_name
+- utter_ask_name
+- utter_cheer_up
+- utter_game
+- utter_game_types
+- utter_goodbye
+- utter_greet
+- utter_happy
+- utter_more
+- utter_how_to_stop
