@@ -47,7 +47,7 @@ rasa run --endpoints endpoints.yml
 ```
 Then open a third terminal for the flask app:
 ```
-cd ../rasa-chatbot/flask
+cd ../rasa-chatbot/flask-app
 python app.py
 ```
 Head on to http://localhost:5000 to view the webpage. Click on the button at the bottom-right corner. Enjoy :)
