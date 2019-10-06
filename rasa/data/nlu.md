@@ -11,12 +11,11 @@
 - yeah, sure
 - okey dokey
 
-
 ## intent:deny
 - no
 - never
 - I don't think so
-- don't like that
+- I don't like that
 - no way
 - not really
 - nope
@@ -59,7 +58,7 @@
 - amazing
 - wonderful
 - I am feeling very good
-- I am great
+- [I am great](mood_great)
 - I'm good
 - fine
 - I'm fine, thanks.

@@ -59,7 +59,7 @@ templates:
     - title: Switch to something else
       payload: Switch to something else
   utter_how_to_stop:
-  - text: "When you wanna stop, just say 'Bye'..."
+  - text: When you wanna stop, just say 'Bye'...
 actions:
 - action_get_date_fact
 - action_get_joke
