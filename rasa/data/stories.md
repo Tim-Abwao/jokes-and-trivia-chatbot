@@ -83,7 +83,6 @@
   - utter_how_to_stop
   - utter_game_types
 
-
 ## say goodbye
 * goodbye
   - utter_goodbye

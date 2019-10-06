@@ -4,52 +4,60 @@ A simple chatbot that's fun to talk to. Powered by [Rasa](https://rasa.com).
 
 Number and history facts courtesy of [Numbers API](http://numbersapi.com).
 Jokes courtesy of the [Official Jokes API](https://official-joke-api.appspot.com/random_joke).
-Webchat widget courtesy of [Mr. Bot](https://github.com/mrbot-ai/rasa-webchat).
+Webchat widget courtesy of [Mr. Bot AI](https://github.com/mrbot-ai/rasa-webchat).
 
 The **rasa** directory has the files needed to modify, re-train and run the chatbot. Please check out the [rasa docs](https://rasa.com/docs/), if you haven't yet.
 
-The **flask-app** directory has a flask app you can use to host the webchat widget and talk to the bot. See [Messaging & Voice Channels](https://rasa.com/docs/rasa/user-guide/messaging-and-voice-channels/) for a list of interesting ways to deploy the chatbot.
+The **flask-sample-page** directory has a flask app you can use to host the webchat widget. See [Messaging & Voice Channels](https://rasa.com/docs/rasa/user-guide/messaging-and-voice-channels/) for a list of interesting ways to deploy the chatbot.
 
 ## Prerequisites
-- You'll need Python. It's considered good practice to work in a virtual environment. 
-- Familiarity with Rasa. Familiarity with [Flask](https://palletsprojects.com/p/flask/) too, but this is optional.
-- Install Rasa. See [installation](https://rasa.com/docs/rasa/user-guide/installation/). This should install all necessary modules.
-- You'll need the internet to fetch content from the APIs.
+- Basic knowledge of [Python](https://www.python.org/), particularly `pip` and `venv`.
+- Familiarity with Rasa. Please see the [installation guide](https://rasa.com/docs/rasa/user-guide/installation/) for OS specific help to install it in a virtual environment.
+- Familiarity with [Flask](https://palletsprojects.com/p/flask/) (optional)
+- Internet connection - to fetch content from the joke/fact APIs.
 
-### Using the command line interface or Rasa X
-If using the Rasa command line interface ( rasa shell ), or Rasa X, you'll need to open two terminals: one for the rasa action server and one for the rasa model server.
-
-First, open a terminal for the action server. 
+### (a). Using Rasa Shell or Rasa X
+1. Open a terminal/command line at the parent directory (i.e. **rasa-chatbot**), then run: 
 ```
-cd ../rasa-chatbot/rasa
+#in case the virtual environment is not active
+source venv/bin/activate
+```
+```
+cd rasa
 rasa run actions
 ```
-Then whip up a second terminal for either `rasa shell` or `rasa x` as follows:
-- For the command line interface:
+2. Open another terminal at the parent directory, and activate the virtual environment.
 ```
-cd ../rasa-chatbot/rasa
-rasa shell --endpoints endpoints.yml
+source venv/bin/activate
 ```
-- Or, for Rasa X:
+* For the command line interface:
 ```
-cd ../rasa-chatbot/rasa
-rasa x --endpoints endpoints.yml
+cd rasa
+rasa shell 
+```
+* Or instead, for Rasa X:
+```
+cd rasa
+rasa x
 ```
 
 For additional arguements, please see [rasa command line interface](https://rasa.com/docs/rasa/user-guide/command-line-interface/).
 
 
-### Using the Webchat widget
-First, run the action server as above. Then run the second terminal with:
+### (b) Using the Webchat widget
+1. Run the action server as in (a) 1 above. 
+2. Open a second terminal at the parent directory, and run:
 ```
-cd ../rasa-chatbot/rasa
-rasa run --endpoints endpoints.yml
+source venv/bin/activate
+cd rasa
+rasa run
 ```
-Then open a third terminal for the flask app:
+3. Similarly, open a third terminal at the parent directory for the flask sample web-page:
 ```
-cd ../rasa-chatbot/flask-app
-python app.py
+source venv/bin/activate
+cd flask-sample-page
+python3 app.py
 ```
-Head on to http://localhost:5000 to view the webpage. Click on the button at the bottom-right corner. Enjoy :)
- 
-> Written with [StackEdit](https://stackedit.io/).
+4. Head on to http://localhost:5000 to view the web-page. Click on the button at the bottom-right corner. 
+
+That's all. Enjoy :simple_smile:
