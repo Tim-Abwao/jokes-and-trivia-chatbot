@@ -13,7 +13,8 @@ intents:
 - switch
 entities:
 - mood_great
-- name
+- PERSON
+- ORG
 - mood_unhappy
 slots:
   fname:
@@ -22,7 +23,7 @@ slots:
   name:
     type: text
     initial_value: ' '
-templates:
+responses:
   utter_greet:
   - text: Hey there! 🙂️. How's the going?
   - text: Hi! How are you?
@@ -35,8 +36,8 @@ templates:
   - text: Cool 🙂️
   - text: Great! 🙂️
   utter_goodbye:
-  - text: Bye {name}, till next time...
-  - text: Adios {name}, hasta la vista...
+  - text: Bye {name}. Till next time...
+  - text: Adios {name}. Hasta la vista...
   utter_game:
   - text: Okay {fname}, wanna hear a joke or learn something new?
   utter_game_types:
@@ -74,3 +75,6 @@ actions:
 - utter_happy
 - utter_more
 - utter_how_to_stop
+session_config:
+  session_expiration_time: 10 
+  carry_over_slots_to_new_session: true 

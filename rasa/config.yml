@@ -1,13 +1,29 @@
 # Configuration for Rasa NLU.
 # https://rasa.com/docs/rasa/nlu/components/
-language: en
-pipeline: supervised_embeddings
+language: "en_core_web_md"
+pipeline: 
+  - name: "SpacyNLP"
+    model: "en_core_web_md"
+    case_sensitive: false
+  - name: "SpacyTokenizer"
+  - name: "SpacyFeaturizer"
+    "pooling": "mean"
+  - name: "SklearnIntentClassifier"
+  - name: "ResponseSelector"
+  - name: "SpacyEntityExtractor"
+    dimensions: ["PERSON","ORG"]
 
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
 policies:
-  - name: MemoizationPolicy
-    max_history: 10
-  - name: KerasPolicy
-    epochs: 300
-  - name: MappingPolicy
+  - name: "MemoizationPolicy"
+    max_history: 8
+  - name: "TEDPolicy"
+    epochs: 150
+    featurizer:
+    - name: MaxHistoryTrackerFeaturizer
+      max_history: 8
+      state_featurizer:
+        - name: LabelTokenizerSingleStateFeaturizer
+  - name: "MappingPolicy"
+

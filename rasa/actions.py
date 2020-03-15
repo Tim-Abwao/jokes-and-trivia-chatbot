@@ -51,8 +51,7 @@ class ActionGetName(Action):
             if word in text:
                 text.remove(word)
 
-        text=[a.title() + ' ' for a in text] # add spaces to the words and change to title case e.g. ['John ','Doe ']
-        full_name=''.join(text).strip() # get single string, without trailing white space e.g. 'John Doe'            
+        full_name =' '.join([a.title() for a in text]) # combine names
         first_name=full_name.split()[0] # get first word in full_name
           # save first name and full name to slots
         return [SlotSet("name", full_name), SlotSet("fname", first_name)]
@@ -92,7 +91,7 @@ class ActionGetJoke(Action):
         return "action_get_joke"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-          # get joke from jokes api
+          # get joke from the jokes api
         joke=urlopen('https://official-joke-api.appspot.com/random_joke').read().decode('utf-8')
           #convert 'string dict' to dict using ast
         joke=literal_eval(joke)
