@@ -8,15 +8,12 @@ Jokes courtesy of the [Official Jokes API](https://official-joke-api.appspot.com
 
 Webchat widget courtesy of [Botfront](https://github.com/botfront/rasa-webchat).
 
-The **rasa** folder has the files needed to modify, re-train and run the chatbot. Please check out the [rasa docs](https://rasa.com/docs/), if you haven't yet.
-
-The **sample-webpage** folder has a [flask](https://palletsprojects.com/p/flask/) web app that you can use to host the webchat widget. There are several other ways to deploy the chatbot: please see [Messaging & Voice Channels](https://rasa.com/docs/rasa/user-guide/messaging-and-voice-channels/).
-
 ## Prerequisites
 - Basic knowledge of **Python**, particularly `pip` and `venv`.
 - Familiarity with **Rasa**.
-- Familiarity with **Flask** (optional).
 - An internet connection to fetch fresh content from the joke/fact APIs.
+
+The **rasa** folder has the files needed to modify, re-train and run the chatbot. Please check out the [rasa docs](https://rasa.com/docs/), if you haven't yet.
 
 ## Getting Started
 Attempting to install the required modules from the `requirements.txt` file would reproduce the exact system state under which the chatbot ran. 
@@ -30,7 +27,7 @@ pip install -r requirements.txt
 ```
 However, some dependencies required for installation might interrupt this process. Please see the [installation guide](https://rasa.com/docs/rasa/user-guide/installation/) for OS - specific help.
 
-**NOTE:** Since Rasa releases updates with major changes from time to time, future versions of Rasa might conflict with this "then  outdated" project.
+**NOTE:** Since Rasa releases updates with major changes from time to time, future versions of Rasa might conflict with this project.
 
 
 ## Rasa Shell - The command line interface
@@ -50,7 +47,20 @@ rasa run actions
 
 ```
 
-For additional arguements, please see [rasa command line interface](https://rasa.com/docs/rasa/user-guide/command-line-interface/).
+Then head back to the terminal running the command line chatbot interface, and enter a greeting e.g. "Hi" or "Hello". Enter "/stop" to end the converstation.
 
+## Deployment Options
+Please see [Messaging & Voice Channels](https://rasa.com/docs/rasa/user-guide/messaging-and-voice-channels/) for help on how to make the chatbot available on various platforms. Options include:
+
+- Your own website
+- Facebook Messenger
+- Slack
+- Telegram
+- Twilio
+- Microsoft Bot Framework
+- Cisco Webex Teams
+- RocketChat
+- Mattermost
+- Custom Connectors
 
 That's all. Enjoy.
