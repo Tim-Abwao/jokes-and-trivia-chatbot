@@ -2,9 +2,9 @@ intents:
 - affirm
 - continue
 - deny
-- get_day_facts
-- get_jokes
-- get_math_facts
+- day_facts
+- jokes
+- math_facts
 - goodbye
 - greet
 - mood_great
@@ -17,10 +17,7 @@ entities:
 - ORG
 - mood_unhappy
 slots:
-  fname:
-    type: text
-    initial_value: ' '
-  name:
+  PERSON:
     type: text
     initial_value: ' '
 responses:
@@ -36,10 +33,10 @@ responses:
   - text: Cool 🙂️
   - text: Great! 🙂️
   utter_goodbye:
-  - text: Bye {name}. Till next time...
-  - text: Adios {name}. Hasta la vista...
+  - text: Bye {PERSON}. Till next time...
+  - text: Adios {PERSON}. Hasta la vista...
   utter_game:
-  - text: Okay {fname}, wanna hear a joke or learn something new?
+  - text: Okay {PERSON}, wanna hear a joke or learn something new?
   utter_game_types:
   - text: So which will it be?
     buttons:
@@ -62,10 +59,9 @@ responses:
   utter_how_to_stop:
   - text: When you wanna stop, just say 'Bye'...
 actions:
-- action_get_date_fact
-- action_get_joke
-- action_get_math_fact
-- action_get_name
+- get_date_fact
+- get_joke
+- get_math_fact
 - utter_ask_name
 - utter_cheer_up
 - utter_game
@@ -76,5 +72,5 @@ actions:
 - utter_more
 - utter_how_to_stop
 session_config:
-  session_expiration_time: 10 
+  session_expiration_time: 30 
   carry_over_slots_to_new_session: true 

@@ -4,8 +4,7 @@
 * mood_great
   - utter_happy
   - utter_ask_name
-* say_name
-  - action_get_name
+* say_name{"PERSON": "William"}
   - utter_game
 * affirm
   - utter_happy
@@ -17,8 +16,7 @@
 * mood_great
   - utter_happy
   - utter_ask_name
-* say_name
-  - action_get_name
+* say_name{"PERSON": "Hellena"}
   - utter_game
 * deny
   - utter_goodbye
@@ -29,8 +27,7 @@
 * mood_unhappy
   - utter_cheer_up
   - utter_ask_name
-* say_name
-  - action_get_name
+* say_name{"PERSON": "Dawson"}
   - utter_game
 * affirm
   - utter_happy
@@ -42,40 +39,39 @@
 * mood_unhappy
   - utter_cheer_up
   - utter_ask_name
-* say_name
-  - action_get_name
+* say_name{"PERSON": "Holmes"}
   - utter_game
 * deny
   - utter_goodbye
 
 ## math facts
-* get_math_facts
-  - action_get_math_fact
-  - action_get_math_fact
+* math_facts
+  - get_math_fact
+  - get_math_fact
   - utter_more
 * continue
-  - action_get_math_fact
-  - action_get_math_fact
+  - get_math_fact
+  - get_math_fact
   - utter_more
 
 ## day facts
-* get_day_facts
-  - action_get_date_fact
-  - action_get_date_fact
+* day_facts
+  - get_date_fact
+  - get_date_fact
   - utter_more
 * continue
-  - action_get_date_fact
-  - action_get_date_fact
+  - get_date_fact
+  - get_date_fact
   - utter_more
 
 ## get jokes
-* get_jokes
-  - action_get_joke
-  - action_get_joke
+* jokes
+  - get_joke
+  - get_joke
   - utter_more
 * continue
-  - action_get_joke
-  - action_get_joke
+  - get_joke
+  - get_joke
   - utter_more
 
 ## switch

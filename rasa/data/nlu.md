@@ -1,5 +1,6 @@
 ## intent:affirm
 - yes
+- yes please
 - indeed
 - of course
 - that sounds good
@@ -7,36 +8,38 @@
 - yeah
 - sure
 - okay
+- ok
 - alright
 - yeah, sure
 - okey dokey
+- I'd like that
 
 ## intent:deny
 - no
 - never
 - I don't think so
-- I don't like that
+- I don't want
 - no way
 - not really
 - nope
 - no I don't
 
-## intent:get_jokes
+## intent:jokes
 - humorous jokes
-- Humorous jokes
+- Humorous Jokes
 - fetch a joke
 - jokes
 - tell me a joke
 
-## intent:get_math_facts
+## intent:math_facts
 - Mathematics Trivia
-- mathematics trivia
+- mathematical trivia
 - Random math facts
 - Maths facts
 
-## intent:get_day_facts
+## intent:day_facts
 - Today in history
-- today in history
+- this day in history
 - Today in History
 - Historical facts
 
@@ -55,6 +58,7 @@
 - good evening
 - hey there
 - ahoy
+- Hallo
 
 ## intent:mood_great
 - perfect
@@ -99,99 +103,23 @@
 - Continue activity
 
 ## intent:say_name
-- [John](PERSON)
-- [Samuel](PERSON)
-- [Peter](PERSON)
-- [Dennis](PERSON)
-- [Erick](PERSON)
-- [Joseph](PERSON)
-- [Stephen](PERSON)
-- [David](PERSON)
+- My name is [John](PERSON)
+- I am [Samuel Collins](PERSON)
+- They call me [Peter](PERSON)
+- Name's [Dennis](PERSON)
+- [Mr. Erick Woods](PERSON)
+- [Mrs. Josephine ](PERSON)
+- [Lady Carmella](PERSON)
+- [Sir David Green](PERSON)
 - [James](PERSON)
 - [Michael](PERSON)
-- [Mary](PERSON)
+- [Mohammad Hussein](PERSON)
 - [Mercy](PERSON)
 - [Caroline](PERSON)
 - [Elizabeth](PERSON)
-- [Jane](PERSON)
+- [Jane Foster](PERSON)
 - [Maureen](PERSON)
-- [Ann](PERSON)
+- [Sheikh Ali Said](PERSON)
 - [Esther](PERSON)
 - [Lillian](PERSON)
-- [Faith](PERSON)
-- [Mwangi](PERSON)
-- [Maina](PERSON)
-- [Otieno](PERSON)
-- [Kamau](PERSON)
-- [Njoroge](PERSON)
-- [Kariuki](PERSON)
-- [Odhiambo](PERSON)
-- [Ochieng](PERSON)
-- [Kimani](PERSON)
-- [Omondi](PERSON)
-- [Onyango](PERSON)
-- [Wanjiru](PERSON)
-- [Njuguna](PERSON)
-- [Macharia](PERSON)
-- [Juma](PERSON)
-- [Mutua](PERSON)
-- [Njeri](PERSON)
-- [Wambui](PERSON)
-- [Karanja](PERSON)
-- [Wanjiku](PERSON)
-- [Mohammed](PERSON)
-- [Muthoni](PERSON)
-- [Chege](PERSON)
-- [Wambua](PERSON)
-- [Ouma](PERSON)
-- [Mbugua](PERSON)
-- [Waweru](PERSON)
-- [Wachira](PERSON)
-- [Wafula](PERSON)
-- [Ngugi](PERSON)
-- [Ndungu](PERSON)
-- [Atieno](PERSON)
-- [Mburu](PERSON)
-- [Mwaura](PERSON)
-- [Gitau](PERSON)
-- [Kinyua](PERSON)
-- [Mutuku](PERSON)
-- [Kibet](PERSON)
-- [Cheruiyot](PERSON)
-- [Akinyi](PERSON)
-- [Ali](PERSON)
-- [Achieng](PERSON)
-- [Mungai](PERSON)
-- [Muriithi](PERSON)
-- [Njeru](PERSON)
-- [Gitonga](PERSON)
-- [Musyoka](PERSON)
-- [Simiyu](PERSON)
-- [Nyaga](PERSON)
-- [Abdi](PERSON)
-- [Hassan](PERSON)
-- [Mugo](PERSON)
-- [Njenga](PERSON)
-- [Owino](PERSON)
-- [Irungu](PERSON)
-- [Koech](PERSON)
-- [Okoth](PERSON)
-- [Wairimu](PERSON)
-- [Nyambura](PERSON)
-- [Mwaniki](PERSON)
-- [Muriuki](PERSON)
-- [Kinyanjui](PERSON)
-- [Wangui](PERSON)
-- [Kioko](PERSON)
-- [Barasa](PERSON)
-- [Rotich](PERSON)
-- [Adhiambo](PERSON)
-- [Njoki](PERSON)
-- [Oduor](PERSON)
-- [Munene](PERSON)
-- [Kuria](PERSON)
-- [Wanjala](PERSON)
-- [Muchiri](PERSON)
-- [Wangari](PERSON)
-- [Langat](PERSON)
-- [Nyaga](PERSON)
+- [Faith Lee Chan](PERSON)
