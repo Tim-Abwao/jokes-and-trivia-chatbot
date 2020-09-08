@@ -37,6 +37,11 @@ responses:
   - text: Hey what's your name...?
   utter_pitch_trivia:
   - text: Okay {PERSON}, wanna hear a joke or learn something new?
+    buttons:
+    - title: Yeah, sure.
+      payload: I'd like that
+    - title: Not really.
+      payload: I don't think so
   utter_trivia_options:
   - text: So which will it be?
     buttons:
@@ -55,6 +60,8 @@ responses:
       payload: Today in history
     - title: Jokes
       payload: humorous jokes
+  utter_maybe_next_time:
+  - text: Oh well, maybe next time.
   utter_goodbye:
   - text: Bye {PERSON}. Till next time...
   - text: Adios {PERSON}. Hasta la vista...

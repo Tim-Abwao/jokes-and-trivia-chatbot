@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Jokes & Trivia Chatbot</title>
+</head>
+
+<body style="font-style: oblique; margin: 10%;">
+	<h2>This web page is meant to demonstrate the <a href="https://github.com/botfront/rasa-webchat">Rasa Webchat
+			widget</a>.</h2>
+	<div id="webchat"></div>
+	<script src="https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.min.js"></script>
+	<script>
+		WebChat.default.init({
+			selector: "#webchat",
+			initPayload: "/greet",
+			customData: { "language": "en" }, // arbitrary custom data. Stay minimal as this will be added to the socket
+			socketUrl: "http://localhost:5005",
+			socketPath: "/socket.io/",
+			title: "Jokes & Random Facts",
+			subtitle: "A chatbot made with Rasa",
+			params: { "storage": "session" } // can be set to "local"  or "session". details in storage section.
+		})
+	</script>
+</body>
+
+</html>

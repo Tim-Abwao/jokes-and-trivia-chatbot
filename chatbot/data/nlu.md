@@ -41,7 +41,7 @@
 - Today in history
 - this day in history
 - What happened today in the past
-- [Historical facts](day_facts)
+- Historical facts
 
 ## intent:goodbye
 - bye
