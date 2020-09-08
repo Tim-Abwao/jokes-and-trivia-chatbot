@@ -23,6 +23,7 @@
 * say_name{"PERSON": "Hellena"}
   - utter_pitch_trivia
 * deny
+  - utter_maybe_next_time
   - utter_goodbye
 
 ## math facts

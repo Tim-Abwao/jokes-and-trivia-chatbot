@@ -38,31 +38,53 @@ A simple chatbot that's fun to talk to. Powered by [Rasa][1].
     rasa train
     ```
 
-- Start the action server:
+## Running the chatbot
 
-    ```bash
-    rasa run actions
-    ```
+### 1. Using the webchat widget
 
-    ![rasa action server](screencasts/action_server.gif)
+The [Rasa Webchat][7] widget (by [Botfront][8]) provides access to the chatbot from websites. The `run.sh` script in the `rasa-chatbot` directory sets up a [flask][9] web server & *Rasa* action server as background processes,  then runs the *Rasa* server:
 
-- Open another terminal window (`ctrl` + `alt` + `N`) or tab (`ctrl` + `alt` + `T`), activate the virtual environment, and launch the command-line interface:
+```bash
+cd ..
+bash run.sh
+```
 
-    ```bash
-    source venv/bin/activate
-    cd chatbot
-    rasa shell
-    ```
+![run script](screencasts/run-script.gif)
 
-    ![rasa shell](screencasts/rasa_shell.gif)
+Once you see the line *"Rasa server is up and running"*, head on to <localhost:5000>:
 
-    (If you're curious about the warnings and errors that appear at the beginning, please have a look at [this question][6])
+![web widget](screencasts/web-chat.gif)
+
+### 2. The command-line interface
+
+Use the following commands to run the *Rasa* action server (as a background process) and the *Rasa* command-line interface:
+
+```bash
+cd chatbot
+# start action server as background process
+rasa run actions &
+action_server_pid=$!
+
+# start command-line interface
+rasa shell
+```
+
+![rasa shell](screencasts/rasa_shell.gif)
+
+*(If you're curious about the warnings and errors that appear at the beginning, please have a look at [this question][6])*
+
+Then, once you stop the command-line interface, remember to terminate the background process (action server):
+
+```bash
+# stop action server on exit
+kill $action_server_pid
+```
 
 ## Deployment Options
 
 Please see [Messaging & Voice Channels](https://rasa.com/docs/rasa/user-guide/messaging-and-voice-channels/) for help on how to make the chatbot available on various platforms. Options include:
 
-- Your own website
+- Your own website *(as in the Webchat demo above)*
 - Facebook Messenger
 - Slack
 - Telegram
@@ -81,3 +103,6 @@ That's all. Enjoy.
 [4]: https://www.python.org
 [5]: https://rasa.com/docs/rasa/user-guide/rasa-tutorial/
 [6]: https://stackoverflow.com/questions/60368298/could-not-load-dynamic-library-libnvinfer-so-6
+[7]: https://github.com/botfront/rasa-webchat
+[8]: https://botfront.io/
+[9]: https://flask.palletsprojects.com/en/1.1.x/
