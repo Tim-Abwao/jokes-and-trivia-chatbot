@@ -1,6 +1,5 @@
 intents:
 - affirm
-- continue
 - deny
 - day_facts
 - jokes
@@ -10,7 +9,7 @@ intents:
 - mood_great
 - mood_unhappy
 - say_name
-- switch
+
 entities:
 - mood_great
 - PERSON
@@ -23,21 +22,22 @@ slots:
 responses:
   utter_greet:
   - text: Hey there! 🙂️. How's the going?
-  - text: Hi! How are you?
-  - text: Hey! How's your day going?
+  - text: Hi! How are you 🙂️?
+  - text: Howdy 🙂️! How are ya?
+  - text: Hey! How's your day going 🙂️?
+  utter_happy:
+  - text: Awesome 🙂️.
+  - text: Cool 🙂️.
+  - text: Great! 🙂️.
   utter_cheer_up:
   - text: Sad to hear that. Don't let that get you down though.
   - text: Oh well, all storms clear out eventually... just hang in there 💪️!
-  utter_happy:
-  - text: Awesome 🙂️
-  - text: Cool 🙂️
-  - text: Great! 🙂️
-  utter_goodbye:
-  - text: Bye {PERSON}. Till next time...
-  - text: Adios {PERSON}. Hasta la vista...
-  utter_game:
+  utter_ask_name:
+  - text: So... what's your name...?
+  - text: Hey what's your name...?
+  utter_pitch_trivia:
   - text: Okay {PERSON}, wanna hear a joke or learn something new?
-  utter_game_types:
+  utter_trivia_options:
   - text: So which will it be?
     buttons:
     - title: Random math facts
@@ -46,31 +46,24 @@ responses:
       payload: Today in history
     - title: Fetch a joke
       payload: humorous jokes
-  utter_ask_name:
-  - text: So... what's your name...?
-  - text: Hey what's your name...?
-  utter_more:
-  - text: Want some more?
+  utter_ask_add_more:
+  - text: What next...?
     buttons:
-    - title: Yes, continue
-      payload: continue same activity
-    - title: Switch to something else
-      payload: Switch to something else
-  utter_how_to_stop:
-  - text: When you wanna stop, just say 'Bye'...
+    - title: Math facts
+      payload: mathematics trivia
+    - title: Date facts
+      payload: Today in history
+    - title: Jokes
+      payload: humorous jokes
+  utter_goodbye:
+  - text: Bye {PERSON}. Till next time...
+  - text: Adios {PERSON}. Hasta la vista...
+
 actions:
 - get_date_fact
 - get_joke
 - get_math_fact
-- utter_ask_name
-- utter_cheer_up
-- utter_game
-- utter_game_types
-- utter_goodbye
-- utter_greet
-- utter_happy
-- utter_more
-- utter_how_to_stop
+
 session_config:
-  session_expiration_time: 30 
+  session_expiration_time: 60 
   carry_over_slots_to_new_session: true 
