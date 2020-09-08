@@ -1,53 +1,62 @@
-# Rasa chatbot with custom actions for number facts, date facts & Jokes
+# Jokes, number & date trivia chatbot
 
-A simple chatbot that's fun to talk to. Powered by [Rasa](https://rasa.com).
+A simple chatbot that's fun to talk to. Powered by [Rasa][1].
 
-> Number and history facts courtesy of [Numbers API](http://numbersapi.com).
-
-> Jokes courtesy of the [Official Jokes API](https://official-joke-api.appspot.com/random_joke).
+- Number and history facts courtesy of [Numbers API][2].
+- Jokes courtesy of the [Official Jokes API][3].
 
 ## Prerequisites
 
-- Familiarity with **Rasa**. Please check out [rasa basics](https://rasa.com/docs/rasa/user-guide/rasa-tutorial/), if you haven't yet.
-- An internet connection to fetch content from the joke and fact APIs.
+- [Python][4] 3.6 or 3.7, and some knowledge of *Rasa* (check out [Rasa Basics][5]).
+- An internet connection to fetch content from the APIs.
 
-The **rasa** folder has the files needed to modify, train and run the chatbot.
-
-## Getting Started
+## Getting started
 
 - Download the files, and create a virtual environment:
 
-```bash
-git clone https://github.com/Tim-Abwao/rasa-chatbot.git
-cd rasa-chatbot
-python3 -m venv venv  #creating a virtual environment
-source venv/bin/activate  #activating the virtual environment
-pip install -U pip
-pip install -r requirements.txt
-```
+    ```bash
+    git clone https://github.com/Tim-Abwao/rasa-chatbot.git
+    cd rasa-chatbot
+    # python3.6 or python3.7 required by Rasa
+    python3.7 -m venv venv
+    source venv/bin/activate
+    ```
 
-## Rasa Shell - The command line interface
+- Install the required packages:
 
-- First, activate the **action server**, to enable the *custom actions*. Open another terminal tab (<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>T</kbd>) or window (<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>N</kbd>) and run:
+    ```bash
+    pip install -U pip
+    pip install rasa rasa[spacy]
+    python3.7 -m spacy download en_core_web_md
+    python3.7 -m spacy link en_core_web_md en
+    ```
 
-```bash
-source ../venv/bin/activate
-rasa run actions
-```
+- Train the chatbot:
 
-![Rasa actions animation](/rasa/animations/rasa_actions.svg)<br>
-<sub>Please note that the stopping (<kbd>ctrl</kbd>+<kbd>C</kbd>) and `exit` commands are used here just to make the animation brief. The action server has to be running for the custom actions to work.</sub>
+    ```bash
+    cd chatbot
+    rasa train
+    ```
 
-- Afterwards, head back to the original terminal window(or tab) where you downloaded the files. You can re-train and run the chatbot using the commands:
+- Start the action server:
 
-```bash
-cd rasa
-rasa train
-rasa shell
-```
+    ```bash
+    rasa run actions
+    ```
 
-![Rasa shell animation](/rasa/animations/rasa_shell.svg)<br>
-<sub>If you're curious about the warnings and errors that appear at the beginning, please have a look at [this question](https://stackoverflow.com/questions/60368298/could-not-load-dynamic-library-libnvinfer-so-6).</sub>
+    ![rasa action server](screencasts/action_server.gif)
+
+- Open another terminal window (`ctrl` + `alt` + `N`) or tab (`ctrl` + `alt` + `T`), activate the virtual environment, and launch the command-line interface:
+
+    ```bash
+    source venv/bin/activate
+    cd chatbot
+    rasa shell
+    ```
+
+    ![rasa shell](screencasts/rasa_shell.gif)
+
+    (If you're curious about the warnings and errors that appear at the beginning, please have a look at [this question][6])
 
 ## Deployment Options
 
@@ -65,3 +74,10 @@ Please see [Messaging & Voice Channels](https://rasa.com/docs/rasa/user-guide/me
 - Custom Connectors
 
 That's all. Enjoy.
+
+[1]: https://rasa.com
+[2]: http://numbersapi.com
+[3]: https://official-joke-api.appspot.com/random_joke
+[4]: https://www.python.org
+[5]: https://rasa.com/docs/rasa/user-guide/rasa-tutorial/
+[6]: https://stackoverflow.com/questions/60368298/could-not-load-dynamic-library-libnvinfer-so-6
