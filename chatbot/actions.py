@@ -1,9 +1,8 @@
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-from urllib.request import urlopen
+import requests
 from datetime import date
-from ast import literal_eval
 
 
 class ActionGetMathFact(Action):
@@ -13,10 +12,8 @@ class ActionGetMathFact(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        # get message from numbersapi
-        fact = urlopen('http://numbersapi.com/random/trivia').read()
-        # send fact as message
-        dispatcher.utter_message(fact.decode('utf-8'))
+        math_fact = requests.get('http://numbersapi.com/random/trivia')
+        dispatcher.utter_message(math_fact.text)
         return []
 
 
@@ -27,12 +24,11 @@ class ActionGetDateFact(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        # get day and month
+        # get current day and month
         day = date.strftime(date.today(), '%m/%d')
-        # get message from numbersapi
-        day_fact = urlopen('http://numbersapi.com/' + day + '/date').read()
-        # send fact as message
-        dispatcher.utter_message(day_fact.decode('utf-8'))
+
+        day_fact = requests.get('http://numbersapi.com/' + day + '/date')
+        dispatcher.utter_message(day_fact.text)
         return []
 
 
@@ -43,10 +39,9 @@ class ActionGetJoke(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        # get joke from the jokes api
-        joke = urlopen('https://official-joke-api.appspot.com/random_joke')
-        # convert 'string dict' to dict using ast
-        joke = literal_eval(joke.read().decode('utf-8'))
-        joke = ' ..... '.join([joke['setup'], joke['punchline']])
+        joke_content = requests.get(
+            'https://official-joke-api.appspot.com/random_joke'
+            ).json()
+        joke = f"{joke_content['setup']}...   {joke_content['punchline']}"
         dispatcher.utter_message(joke)
         return []

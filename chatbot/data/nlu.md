@@ -7,8 +7,8 @@
 - correct
 - yeah
 - sure
-- okay
-- ok
+- okay, sure
+- yeah, ok
 - alright
 - yeah, sure
 - okey dokey
@@ -25,23 +25,23 @@
 - no I don't
 
 ## intent:jokes
-- humorous jokes
-- Humorous Jokes
-- fetch a joke
 - jokes
+- humorous jokes
+- Really funny jokes
+- fetch me jokes
 - tell me a joke
 
 ## intent:math_facts
 - Mathematics Trivia
 - mathematical trivia
 - Random math facts
-- Maths facts
+- Maths number facts
 
 ## intent:day_facts
 - Today in history
 - this day in history
-- Today in History
-- Historical facts
+- What happened today in the past
+- [Historical facts](day_facts)
 
 ## intent:goodbye
 - bye
@@ -59,6 +59,7 @@
 - hey there
 - ahoy
 - Hallo
+- Howdy
 
 ## intent:mood_great
 - perfect
@@ -66,7 +67,7 @@
 - great
 - amazing
 - wonderful
-- I am feeling very good
+- I am [feeling very good](mood_great)
 - [I am great](mood_great)
 - I'm good
 - fine
@@ -91,24 +92,15 @@
 - terrible
 - depressed
 - gloomy
-
-## intent:switch
-- Switch to something else
-- Switch To Something else
-- Try something else
-
-## intent:continue
-- continue same activity
-- Continue Same Activity
-- Continue activity
+- [feeling down](mood_unhappy)
 
 ## intent:say_name
-- My name is [John](PERSON)
+- My name is [John Doe](PERSON)
 - I am [Samuel Collins](PERSON)
 - They call me [Peter](PERSON)
-- Name's [Dennis](PERSON)
+- Name's [Sarah](PERSON)
 - [Mr. Erick Woods](PERSON)
-- [Mrs. Josephine ](PERSON)
+- [Mrs. Josephine](PERSON)
 - [Lady Carmella](PERSON)
 - [Sir David Green](PERSON)
 - [James](PERSON)
