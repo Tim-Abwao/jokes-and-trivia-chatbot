@@ -26,7 +26,7 @@ A simple chatbot that's fun to talk to. Powered by [Rasa][1].
 
     ```bash
     pip install -U pip
-    pip install rasa rasa[spacy]
+    pip install rasa rasa[spacy] Flask
     python3.7 -m spacy download en_core_web_md
     python3.7 -m spacy link en_core_web_md en
     ```
