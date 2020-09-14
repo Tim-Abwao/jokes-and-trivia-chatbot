@@ -51,9 +51,11 @@ bash run.sh
 
 ![run script](screencasts/run-script.gif)
 
-Once you see the line *"Rasa server is up and running"*, head on to <localhost:5000>:
+Once you see the line *"Rasa server is up and running"*, head on to <localhost:5000> in your browser:
 
 ![web widget](screencasts/web-chat.gif)
+
+To terminate the *Rasa* server, enter `crtl` + `C` in the terminal it's running in.
 
 ### 2. The command-line interface
 
@@ -73,7 +75,7 @@ rasa shell
 
 *(If you're curious about the warnings and errors that appear at the beginning, please have a look at [this question][6])*
 
-Then, once you stop the command-line interface, remember to terminate the background process (action server):
+Then, once you stop the command-line interface (using `ctrl` + `C`), remember to terminate the background process (action server):
 
 ```bash
 # stop action server on exit
