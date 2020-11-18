@@ -14,7 +14,7 @@
 		WebChat.default.init({
 			selector: "#webchat",
 			initPayload: "/greet",
-			customData: { "language": "en" }, // arbitrary custom data. Stay minimal as this will be added to the socket
+			customData: { "some-key": "some-value" }, // arbitrary custom data. Stay minimal as this will be added to the socket
 			socketUrl: "http://localhost:5005",
 			socketPath: "/socket.io/",
 			title: "Jokes & Random Facts",

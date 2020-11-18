@@ -7,7 +7,7 @@ A simple chatbot that's fun to talk to. Powered by [Rasa][1].
 
 ## Prerequisites
 
-- [Python][4] 3.6 or 3.7, and some knowledge of *Rasa* (check out [Rasa Basics][5]).
+- [Python][4], and some knowledge of *Rasa* (check out [Rasa Basics][5]).
 - An internet connection to fetch content from the APIs.
 
 ## Getting started
@@ -17,74 +17,39 @@ A simple chatbot that's fun to talk to. Powered by [Rasa][1].
     ```bash
     git clone https://github.com/Tim-Abwao/rasa-chatbot.git
     cd rasa-chatbot
-    # python3.6 or python3.7 required by Rasa
-    python3.7 -m venv venv
+
+    python3 -m venv venv
     source venv/bin/activate
-    ```
-
-- Install the required packages:
-
-    ```bash
     pip install -U pip
-    pip install rasa rasa[spacy] Flask
-    python3.7 -m spacy download en_core_web_md
-    python3.7 -m spacy link en_core_web_md en
+    pip install rasa Flask
     ```
 
-- Train the chatbot:
+- Train the chatbot, then run `run.sh` to launch it:
 
     ```bash
-    cd chatbot
-    rasa train
+    cd trivia-chatbot && rasa train
+    cd .. && bash run.sh
     ```
 
-## Running the chatbot
+    The [Rasa Webchat][6] widget (by [Botfront][7]) provides a nice interface to the chatbot from websites. The `run.sh` script in the `rasa-chatbot` directory sets up a demo webpage using [flask][8], then starts the *Rasa action server* and the *Rasa* chatbot server.
 
-### 1. Using the webchat widget
+    ![run script](screencasts/script-run.gif)
 
-The [Rasa Webchat][7] widget (by [Botfront][8]) provides access to the chatbot from websites. The `run.sh` script in the `rasa-chatbot` directory sets up a [flask][9] web server & *Rasa* action server as background processes,  then runs the *Rasa* server:
+    Once you see the line *"Rasa server is up and running"*, head on to <localhost:5000> in your favourite browser:
 
-```bash
-cd ..
-bash run.sh
-```
+    ![web widget](screencasts/web-chat.gif)
 
-![run script](screencasts/run-script.gif)
+    When you're done, just close the demo webpage browser tab, and use `Ctrl + C` to terminate the *Rasa* processes running in the terminal.
 
-Once you see the line *"Rasa server is up and running"*, head on to <localhost:5000> in your browser:
+    Next time you wish to start the chatbot, you'll just have to run the `run.sh` script.
 
-![web widget](screencasts/web-chat.gif)
-
-To terminate the *Rasa* server, enter `crtl` + `C` in the terminal it's running in.
-
-### 2. The command-line interface
-
-Use the following commands to run the *Rasa* action server (as a background process) and the *Rasa* command-line interface:
-
-```bash
-cd chatbot
-# start action server as background process
-rasa run actions &
-action_server_pid=$!
-
-# start command-line interface
-rasa shell
-```
-
-![rasa shell](screencasts/rasa_shell.gif)
-
-*(If you're curious about the warnings and errors that appear at the beginning, please have a look at [this question][6])*
-
-Then, once you stop the command-line interface (using `ctrl` + `C`), remember to terminate the background process (action server):
-
-```bash
-# stop action server on exit
-kill $action_server_pid
-```
+    ```bash
+    bash run.sh
+    ```
 
 ## Deployment Options
 
-Please see [Messaging & Voice Channels](https://rasa.com/docs/rasa/user-guide/messaging-and-voice-channels/) for help on how to make the chatbot available on various platforms. Options include:
+Please see [Messaging & Voice Channels][9] for help on how to make the chatbot available on various platforms. Options include:
 
 - Your own website *(as in the Webchat demo above)*
 - Facebook Messenger
@@ -95,16 +60,15 @@ Please see [Messaging & Voice Channels](https://rasa.com/docs/rasa/user-guide/me
 - Cisco Webex Teams
 - RocketChat
 - Mattermost
+- Google Hangouts Chat
 - Custom Connectors
-
-That's all. Enjoy.
 
 [1]: https://rasa.com
 [2]: http://numbersapi.com
 [3]: https://official-joke-api.appspot.com/random_joke
 [4]: https://www.python.org
-[5]: https://rasa.com/docs/rasa/user-guide/rasa-tutorial/
-[6]: https://stackoverflow.com/questions/60368298/could-not-load-dynamic-library-libnvinfer-so-6
-[7]: https://github.com/botfront/rasa-webchat
-[8]: https://botfront.io/
-[9]: https://flask.palletsprojects.com/en/1.1.x/
+[5]: https://rasa.com/docs/rasa/playground
+[6]: https://github.com/botfront/rasa-webchat
+[7]: https://botfront.io/
+[8]: https://flask.palletsprojects.com/en/1.1.x/
+[9]: https://rasa.com/docs/rasa/messaging-and-voice-channels/

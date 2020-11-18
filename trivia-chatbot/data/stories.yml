@@ -1,0 +1,55 @@
+version: '2.0'
+
+stories:
+- story: greetings
+  steps:
+  - intent: greet
+  - action: utter_greet_and_ask_mood
+
+- story: happy mood
+  steps:
+  - intent: mood_great
+  - action: utter_happy
+  - action: utter_pitch_trivia
+
+- story: unhappy mood
+  steps:
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_pitch_trivia
+
+- story: accept trivia
+  steps:
+  - intent: affirm
+  - action: utter_trivia_options
+
+- story: deny trivia
+  steps:
+  - intent: deny
+  - action: utter_maybe_next_time
+
+- story: math facts
+  steps:
+  - intent: math_facts
+  - action: get_math_fact
+  - action: get_math_fact
+  - action: utter_ask_add_more
+
+- story: day facts
+  steps:
+  - intent: day_facts
+  - action: get_date_fact
+  - action: get_date_fact
+  - action: utter_ask_add_more
+
+- story: get jokes
+  steps:
+  - intent: jokes
+  - action: get_joke
+  - action: get_joke
+  - action: utter_ask_add_more
+
+- story: say goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
