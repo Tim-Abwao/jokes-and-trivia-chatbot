@@ -1,0 +1,67 @@
+#### This file contains tests to evaluate that your bot behaves as expected.
+#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+
+stories:
+- story: happy mood and interested
+  steps:
+  - user: |
+      hey
+    intent: greet
+  - action: utter_greet_and_ask_mood
+  - user: |
+      I'm good, thanks
+    intent: mood_great
+  - action: utter_happy
+  - action: utter_pitch_trivia
+  - user: |
+      yes, alright
+    intent: affirm
+  - action: utter_trivia_options
+
+- story: happy mood but not interested
+  steps:
+  - user: |
+      hi
+    intent: greet
+  - action: utter_greet_and_ask_mood
+  - user: |
+      The going is good
+    intent: mood_great
+  - action: utter_happy
+  - action: utter_pitch_trivia
+  - user: |
+      not really
+    intent: deny
+  - action: utter_maybe_next_time
+
+- story: not happy yet interested
+  steps:
+  - user: |
+      hey
+    intent: greet
+  - action: utter_greet_and_ask_mood
+  - user: |
+      I'm feeling down
+    intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_pitch_trivia
+  - user: |
+      alright
+    intent: affirm
+  - action: utter_trivia_options
+
+- story: unhappy and not interested
+  steps:
+  - user: |
+      hi
+    intent: greet
+  - action: utter_greet_and_ask_mood
+  - user: |
+      A bit gloomy
+    intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_pitch_trivia
+  - user: |
+      No. Not now.
+    intent: deny
+  - action: utter_maybe_next_time
