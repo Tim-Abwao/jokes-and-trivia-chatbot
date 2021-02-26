@@ -25,7 +25,7 @@ A simple chatbot that's fun to talk to. Powered by [Rasa][1].
 3. Start [Rasa X][4] using the `run.sh` script:
 
     ```bash
-    rasa x
+    bash run.sh
     ```
 
     The script:
