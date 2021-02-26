@@ -41,7 +41,7 @@ class ActionGetJoke(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         joke_content = requests.get(
             'https://official-joke-api.appspot.com/random_joke'
-            ).json()
+        ).json()
         joke = f"{joke_content['setup']}...   {joke_content['punchline']}"
         dispatcher.utter_message(joke)
         return []
