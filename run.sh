@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
 
-# activate Python virtual environment
-source venv/bin/activate
+# Activate the Python virtual environment
+if [ -d venv ]
+    then
+        source venv/bin/activate
+fi
 
-# Flask web app
-export FLASK_APP=demo-web-app/app
-export FLASK_ENV=development
-flask run &
-flask_server_pid=$!
-
-# Action server & Rasa server
 cd trivia-chatbot
-rasa run actions &
-rasa run --cors "*"
 
-# stop flask web app
-kill $flask_server_pid;
+# Train the chatbot if no model is present
+if [ ! -d models ]
+    then rasa train
+fi
+
+# Start the action server & Rasa X
+rasa run actions &
+rasa x

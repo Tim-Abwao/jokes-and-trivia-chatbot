@@ -5,53 +5,44 @@ A simple chatbot that's fun to talk to. Powered by [Rasa][1].
 - Number and history facts courtesy of [Numbers API][2].
 - Jokes courtesy of the [Official Jokes API][3].
 
-## Prerequisites
-
-- [Python][4], and some knowledge of *Rasa* (check out [Rasa Basics][5]).
-- An internet connection to fetch content from the APIs.
-
 ## Getting started
 
-- Download the files, and create a virtual environment:
+1. Download the necessary files:
 
     ```bash
     git clone https://github.com/Tim-Abwao/rasa-chatbot.git
     cd rasa-chatbot
+    ```
 
+2. Create a virtual environment, and install the required packages:
+
+    ```bash
     python3 -m venv venv
     source venv/bin/activate
-    pip install -U pip
-    pip install rasa Flask
+    pip3 install rasa-x --extra-index-url https://pypi.rasa.com/simple
     ```
 
-- Train the chatbot, then run `run.sh` to launch it:
+3. Start [Rasa X][4] using the `run.sh` script:
 
     ```bash
-    cd trivia-chatbot && rasa train
-    cd .. && bash run.sh
+    rasa x
     ```
 
-    The [Rasa Webchat][6] widget (by [Botfront][7]) provides a nice interface to the chatbot from websites. The `run.sh` script in the `rasa-chatbot` directory sets up a demo webpage using [flask][8], then starts the *Rasa action server* and the *Rasa* chatbot server.
+    The script:
 
-    ![run script](screencasts/script-run.gif)
+    - Activates the Python virtual environment (default *venv*), if present.
+    - Trains a model for the chatbot, if one doesn't yet exist.
+    - Starts the *rasa action server*, and *rasa x server* - which additionally opens a browser tab to its user interface.
 
-    Once you see the line *"Rasa server is up and running"*, head on to <localhost:5000> in your favourite browser:
+    Please visit the [rasa x user guide][4] to learn more about its features.
 
-    ![web widget](screencasts/web-chat.gif)
-
-    When you're done, just close the demo webpage browser tab, and use `Ctrl + C` to terminate the *Rasa* processes running in the terminal.
-
-    Next time you wish to start the chatbot, you'll just have to run the `run.sh` script.
-
-    ```bash
-    bash run.sh
-    ```
+    ![rasa x ui](screen.gif)
 
 ## Deployment Options
 
-Please see [Messaging & Voice Channels][9] for help on how to make the chatbot available on various platforms. Options include:
+Please see [Messaging & Voice Channels][5] for help on how to make the chatbot available on various platforms. Options include:
 
-- Your own website *(as in the Webchat demo above)*
+- Your own website
 - Facebook Messenger
 - Slack
 - Telegram
@@ -66,9 +57,5 @@ Please see [Messaging & Voice Channels][9] for help on how to make the chatbot a
 [1]: https://rasa.com
 [2]: http://numbersapi.com
 [3]: https://official-joke-api.appspot.com/random_joke
-[4]: https://www.python.org
-[5]: https://rasa.com/docs/rasa/playground
-[6]: https://github.com/botfront/rasa-webchat
-[7]: https://botfront.io/
-[8]: https://flask.palletsprojects.com/en/1.1.x/
-[9]: https://rasa.com/docs/rasa/messaging-and-voice-channels/
+[4]: https://rasa.com/docs/rasa-x/
+[5]: https://rasa.com/docs/rasa/messaging-and-voice-channels/
