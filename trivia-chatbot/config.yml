@@ -32,3 +32,4 @@ policies:
   - name: TEDPolicy
     max_history: 4
     epochs: 100
+  - name: RulePolicy
