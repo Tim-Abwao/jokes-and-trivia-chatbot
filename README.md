@@ -1,4 +1,4 @@
-# Jokes, number & date trivia chatbot
+# Jokes & Trivia Chatbot
 
 A simple chatbot that's fun to talk to. Powered by [Rasa][1].
 
@@ -10,8 +10,8 @@ A simple chatbot that's fun to talk to. Powered by [Rasa][1].
 1. Download the necessary files:
 
     ```bash
-    git clone https://github.com/Tim-Abwao/rasa-chatbot.git
-    cd rasa-chatbot
+    git clone https://github.com/Tim-Abwao/jokes-and-trivia-chatbot.git
+    cd jokes-and-trivia-chatbot
     ```
 
 2. Create a virtual environment, and install the required packages:
@@ -30,7 +30,7 @@ A simple chatbot that's fun to talk to. Powered by [Rasa][1].
 
     The script:
 
-    - Activates the Python virtual environment (default *venv*), if present.
+    - Activates the Python virtual environment (default *venv*).
     - Trains a model for the chatbot, if one doesn't yet exist.
     - Starts the *rasa action server*, and *rasa x server* - which additionally opens a browser tab to its user interface.
 
