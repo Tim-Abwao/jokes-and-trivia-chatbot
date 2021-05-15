@@ -38,6 +38,16 @@ A simple chatbot that's fun to talk to. Powered by [Rasa][1].
 
     ![rasa x ui](screen.gif)
 
+> **NOTE:** In case you encounter the error
+>
+> ... `from sqlalchemy.engine import reflection, RowProxy, Connection`
+>
+> `ImportError: cannot import name 'RowProxy' from 'sqlalchemy.engine'` ...
+>
+> consider installing a version of SQLAlchemy below 1.4.0 i.e.
+>
+> `pip install 'SQLAlchemy>=1.3.24, <1.4.0'`
+
 ## Deployment Options
 
 Please see [Messaging & Voice Channels][5] for help on how to make the chatbot available on various platforms. Options include:
