@@ -60,7 +60,7 @@ responses:
           title: Stop
       text: What next ...?
   utter_maybe_next_time:
-    - text: Oh well, maybe next time.
+    - text: Oh well, til next time.
   utter_goodbye:
     - text: Bye bye...
     - text: Adios. Hasta la vista...
