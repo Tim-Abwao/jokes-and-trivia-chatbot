@@ -130,7 +130,7 @@ typeguard==2.13.3
 typing-extensions==3.10.0.2
 typing-utils==0.1.0
 tzlocal==2.1
-ujson==4.3.0
+ujson==5.1.0
 urllib3==1.26.9
 uvloop==0.16.0
 wcwidth==0.2.5
