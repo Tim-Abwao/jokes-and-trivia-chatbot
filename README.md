@@ -21,6 +21,7 @@ A simple chatbot that's fun to talk to. Powered by [Rasa][rasa].
     ```bash
     python3 -m venv venv
     source venv/bin/activate
+    pip install -U pip
     pip install rasa
     ```
 
