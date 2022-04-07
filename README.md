@@ -1,9 +1,11 @@
 # Jokes & Trivia Chatbot
 
-A simple chatbot that's fun to talk to. Powered by [Rasa][1].
+A simple chatbot that's fun to talk to. Powered by [Rasa][rasa].
 
-- Number and history facts courtesy of [Numbers API][2].
-- Jokes courtesy of the [Official Jokes API][3].
+- Number and history facts courtesy of [Numbers API][num-api].
+- Jokes courtesy of <https://joke.deno.dev/>.
+
+![screencast of the chatbot](screencast.gif)
 
 ## Getting started
 
@@ -19,10 +21,10 @@ A simple chatbot that's fun to talk to. Powered by [Rasa][1].
     ```bash
     python3 -m venv venv
     source venv/bin/activate
-    pip3 install rasa-x --extra-index-url https://pypi.rasa.com/simple
+    pip install rasa
     ```
 
-3. Start [Rasa X][4] using the `run.sh` script:
+3. Use `run.sh` to launch the chatbot:
 
     ```bash
     bash run.sh
@@ -30,27 +32,13 @@ A simple chatbot that's fun to talk to. Powered by [Rasa][1].
 
     The script:
 
-    - Activates the Python virtual environment (default *venv*).
-    - Trains a model for the chatbot, if one doesn't yet exist.
-    - Starts the *rasa action server*, and *rasa x server* - which additionally opens a browser tab to its user interface.
-
-    Please visit the [rasa x user guide][4] to learn more about its features.
-
-    ![rasa x ui](screen.gif)
-
-> **NOTE:** In case you encounter the error
->
-> ... `from sqlalchemy.engine import reflection, RowProxy, Connection`
->
-> `ImportError: cannot import name 'RowProxy' from 'sqlalchemy.engine'` ...
->
-> consider installing a version of SQLAlchemy below 1.4.0 i.e.
->
-> `pip install 'SQLAlchemy>=1.3.24, <1.4.0'`
+    - Starts the *action server*
+    - Opens the demo web-page
+    - Starts the rasa server (might take a while).
 
 ## Deployment Options
 
-Please see [Messaging & Voice Channels][5] for help on how to make the chatbot available on various platforms. Options include:
+Please see [Messaging & Voice Channels][channels] for help on how to make the chatbot available on various platforms. Options include:
 
 - Your own website
 - Facebook Messenger
@@ -64,8 +52,6 @@ Please see [Messaging & Voice Channels][5] for help on how to make the chatbot a
 - Google Hangouts Chat
 - Custom Connectors
 
-[1]: https://rasa.com
-[2]: http://numbersapi.com
-[3]: https://official-joke-api.appspot.com/random_joke
-[4]: https://rasa.com/docs/rasa-x/
-[5]: https://rasa.com/docs/rasa/messaging-and-voice-channels/
+[rasa]: https://rasa.com
+[num-api]: http://numbersapi.com
+[channels]: https://rasa.com/docs/rasa/messaging-and-voice-channels/
