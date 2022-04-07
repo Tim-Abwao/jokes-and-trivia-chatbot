@@ -27,7 +27,7 @@ class ActionGetDateFact(Action):
         # get current day and month
         day = date.strftime(date.today(), '%m/%d')
 
-        day_fact = requests.get('http://numbersapi.com/' + day + '/date')
+        day_fact = requests.get(f'http://numbersapi.com/{day}/date')
         dispatcher.utter_message(day_fact.text)
         return []
 
@@ -39,9 +39,7 @@ class ActionGetJoke(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        joke_content = requests.get(
-            'https://official-joke-api.appspot.com/random_joke'
-        ).json()
+        joke_content = requests.get('https://joke.deno.dev/').json()
         joke = f"{joke_content['setup']}...   {joke_content['punchline']}"
         dispatcher.utter_message(joke)
         return []

@@ -1,81 +1,72 @@
-version: '2.0'
-config:
-  store_entities_as_slots: true
+version: "3.1"
+
+entities:
+  - mood_great
+  - mood_unhappy
+  - affirm
+  - deny
+  - goodbye
+
+intents:
+  - affirm:
+  - deny:
+  - day_facts:
+  - jokes:
+  - math_facts:
+  - goodbye:
+  - greet:
+  - mood_great:
+  - mood_unhappy:
+
+responses:
+  utter_greet_and_ask_mood:
+    - text: Hey there! 🙂️. How's the going?
+    - text: Hi! How are you 🙂️?
+    - text: Howdy 🙂️! How are ya?
+    - text: Hey! How's your day going 🙂️?
+  utter_happy:
+    - text: Awesome 🙂️.
+    - text: Cool 🙂️.
+    - text: Great! 🙂️.
+  utter_cheer_up:
+    - text: Sad to hear that. Don't let that get you down though.
+    - text: Oh well, all storms clear out eventually... just hang in there 💪️!
+  utter_pitch_trivia:
+    - buttons:
+        - payload: I'd like that
+          title: Yeah, sure.
+        - payload: I don't think so
+          title: Not really.
+      text: Wanna hear a joke or learn something new?
+  utter_trivia_options:
+    - buttons:
+        - payload: mathematics trivia
+          title: Random math facts
+        - payload: Today in history
+          title: Today in history...
+        - payload: humorous jokes
+          title: Fetch a joke
+      text: Great! 🙂️. So which will it be?
+  utter_ask_add_more:
+    - buttons:
+        - payload: mathematics trivia
+          title: Math facts
+        - payload: Today in history
+          title: Date facts
+        - payload: humorous jokes
+          title: Jokes
+      text: What next ...?
+  utter_maybe_next_time:
+    - text: Oh well, maybe next time. Bye.
+  utter_goodbye:
+    - text: Bye bye...
+    - text: Adios. Hasta la vista...
+
+actions:
+  - get_date_fact
+  - get_joke
+  - get_math_fact
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
-intents:
-- affirm:
-    use_entities: true
-- deny:
-    use_entities: true
-- day_facts:
-    use_entities: true
-- jokes:
-    use_entities: true
-- math_facts:
-    use_entities: true
-- goodbye:
-    use_entities: true
-- greet:
-    use_entities: true
-- mood_great:
-    use_entities: true
-- mood_unhappy:
-    use_entities: true
-entities:
-- mood_great
-- mood_unhappy
-- affirm
-- deny
-- goodbye
-slots: {}
-responses:
-  utter_greet_and_ask_mood:
-  - text: Hey there! 🙂️. How's the going?
-  - text: Hi! How are you 🙂️?
-  - text: Howdy 🙂️! How are ya?
-  - text: Hey! How's your day going 🙂️?
-  utter_happy:
-  - text: Awesome 🙂️.
-  - text: Cool 🙂️.
-  - text: Great! 🙂️.
-  utter_cheer_up:
-  - text: Sad to hear that. Don't let that get you down though.
-  - text: Oh well, all storms clear out eventually... just hang in there 💪️!
-  utter_pitch_trivia:
-  - buttons:
-    - payload: I'd like that
-      title: Yeah, sure.
-    - payload: I don't think so
-      title: Not really.
-    text: Wanna hear a joke or learn something new?
-  utter_trivia_options:
-  - buttons:
-    - payload: mathematics trivia
-      title: Random math facts
-    - payload: Today in history
-      title: Today in history...
-    - payload: humorous jokes
-      title: Fetch a joke
-    text: Great! 🙂️. So which will it be?
-  utter_ask_add_more:
-  - buttons:
-    - payload: mathematics trivia
-      title: Math facts
-    - payload: Today in history
-      title: Date facts
-    - payload: humorous jokes
-      title: Jokes
-    text: What next ...?
-  utter_maybe_next_time:
-  - text: Oh well, maybe next time. Bye.
-  utter_goodbye:
-  - text: Bye bye...
-  - text: Adios. Hasta la vista...
-actions:
-- get_date_fact
-- get_joke
-- get_math_fact
-forms: {}
-e2e_actions: []
