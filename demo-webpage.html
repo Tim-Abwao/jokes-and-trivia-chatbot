@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<title>Chatbot Demo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+    <style>
+        body {
+            margin: 10% auto;
+            max-width: 95%;
+        }
+
+        .content h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h1>[Your content goes here]</h1>
+    </div>
+    <div id="rasa-chat-widget" data-initial-payload="Hi." data-width=350
+        data-websocket-url="http://localhost:5005/socket.io"></div>
+    <script src="https://unpkg.com/@rasahq/rasa-chat" type="application/javascript"></script>
+</body>
+
+</html>
