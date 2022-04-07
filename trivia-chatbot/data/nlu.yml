@@ -1,97 +1,104 @@
 version: "3.1"
 nlu:
-- intent: affirm
-  examples: |
-    - yes
-    - [yes please](affirm)
-    - indeed
-    - [of course](affirm)
-    - that [sounds good](affirm)
-    - correct
-    - yeah
-    - sure
-    - [okay, sure](affirm)
-    - [yeah, ok](affirm)
-    - alright
-    - [yeah, sure](affirm)
-    - [okey dokey](affirm)
-    - [I'd like that](affirm)
-- intent: deny
-  examples: |
-    - no
-    - not now
-    - never
-    - I [don't think so](deny)
-    - I [don't want](deny)
-    - no way
-    - [not really](deny)
-    - nope
-    - no I don't
-- intent: jokes
-  examples: |
-    - tell me a joke
-    - humorous jokes
-    - any hilarious jokes
-    - really funny jokes
-    - fetch some jokes
-- intent: math_facts
-  examples: |
-    - mathematics trivial facts
-    - How about some mathematical facts
-    - random numerical facts
-    - maths trivia facts
-- intent: day_facts
-  examples: |
-    - today in history
-    - on this date in history
-    - What happened today in the past
-    - historical facts
-- intent: goodbye
-  examples: |
-    - bye
-    - goodbye
-    - [see you around](goodbye)
-    - [see you later](goodbye)
-    - bye bye
-    - adios amigo
-    - hasta la vista
-- intent: greet
-  examples: |
-    - hey
-    - hello
-    - hi
-    - good morning
-    - good evening
-    - hey there
-    - ahoy
-    - hallo
-    - howdy
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - wonderful
-    - I'm good
-    - I feel [very good](mood_great)
-    - I am [great, thanks](mood_great)
-    - I am actually [fine, thanks](mood_great).
-    - [fine thank you](mood_great)
-    - The [going is good](mood_great)
-    - The going is great
-    - I'm feeling [awesome](mood_great)
-- intent: mood_unhappy
-  examples: |
-    - sad
-    - very sad
-    - bad
-    - so bad
-    - unhappy
-    - [not good](mood_unhappy)
-    - [not well](mood_unhappy)
-    - awful
-    - terrible
-    - depressed
-    - [feeling down](mood_unhappy)
-    - I feel [rather down](mood_unhappy)
-    - I am [a bit gloomy](mood_unhappy)
+  - intent: affirm
+    examples: |
+      - yes
+      - [yes please](affirm)
+      - indeed
+      - [of course](affirm)
+      - that [sounds good](affirm)
+      - correct
+      - yeah
+      - sure
+      - [okay, sure](affirm)
+      - [yeah, ok](affirm)
+      - alright
+      - [yeah, sure](affirm)
+      - [okey dokey](affirm)
+      - [I'd like that](affirm)
+  - intent: deny
+    examples: |
+      - no
+      - not now
+      - never
+      - I [don't think so](deny)
+      - I [don't want](deny)
+      - no way
+      - [not really](deny)
+      - nope
+      - no I don't
+  - intent: jokes
+    examples: |
+      - tell me a joke
+      - humorous jokes
+      - any hilarious jokes
+      - really funny jokes
+      - fetch some jokes
+  - intent: math_facts
+    examples: |
+      - mathematics trivial facts
+      - How about some mathematical facts
+      - random numerical facts
+      - maths trivia facts
+  - intent: day_facts
+    examples: |
+      - today in history
+      - on this date in history
+      - What happened today in the past
+      - historical facts
+  - intent: goodbye
+    examples: |
+      - bye
+      - goodbye
+      - [see you around](goodbye)
+      - [see you later](goodbye)
+      - bye bye
+      - adios amigo
+      - hasta la vista
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - good morning
+      - good evening
+      - hey there
+      - ahoy
+      - hallo
+      - howdy
+  - intent: mood_great
+    examples: |
+      - perfect
+      - great
+      - amazing
+      - wonderful
+      - I'm good
+      - I feel [very good](mood_great)
+      - I am [great, thanks](mood_great)
+      - I am actually [fine, thanks](mood_great).
+      - [fine thank you](mood_great)
+      - The [going is good](mood_great)
+      - The going is great
+      - I'm feeling [awesome](mood_great)
+  - intent: mood_unhappy
+    examples: |
+      - sad
+      - very sad
+      - bad
+      - so bad
+      - unhappy
+      - [not good](mood_unhappy)
+      - [not well](mood_unhappy)
+      - awful
+      - terrible
+      - depressed
+      - [feeling down](mood_unhappy)
+      - I feel [rather down](mood_unhappy)
+      - I am [a bit gloomy](mood_unhappy)
+  - intent: stop
+    examples: |
+      - stop
+      - You can stop now
+      - Stop and exit
+      - that's enough
+      - I've had enough

@@ -8,15 +8,16 @@ entities:
   - goodbye
 
 intents:
-  - affirm:
-  - deny:
-  - day_facts:
-  - jokes:
-  - math_facts:
-  - goodbye:
-  - greet:
-  - mood_great:
-  - mood_unhappy:
+  - affirm
+  - deny
+  - day_facts
+  - jokes
+  - math_facts
+  - goodbye
+  - greet
+  - mood_great
+  - mood_unhappy
+  - stop
 
 responses:
   utter_greet_and_ask_mood:
@@ -55,9 +56,11 @@ responses:
           title: Date facts
         - payload: humorous jokes
           title: Jokes
+        - payload: stop
+          title: Stop
       text: What next ...?
   utter_maybe_next_time:
-    - text: Oh well, maybe next time. Bye.
+    - text: Oh well, maybe next time.
   utter_goodbye:
     - text: Bye bye...
     - text: Adios. Hasta la vista...
