@@ -18,8 +18,10 @@ A simple chatbot that's fun to talk to. Powered by [Rasa][rasa].
 
 2. Create a virtual environment, and install the required packages:
 
+    >**NOTE:** *Rasa* only supports python3.7 to python3.9 at time of writing.
+
     ```bash
-    python3 -m venv venv
+    python3.9 -m venv venv
     source venv/bin/activate
     pip install -U pip
     pip install rasa
@@ -33,9 +35,9 @@ A simple chatbot that's fun to talk to. Powered by [Rasa][rasa].
 
     The script:
 
-    - Starts the *action server*
+    - Starts the *rasa action server*
     - Opens the demo web-page
-    - Starts the rasa server (might take a while).
+    - Starts the *rasa server* (might take a while).
 
 ## Deployment Options
 
