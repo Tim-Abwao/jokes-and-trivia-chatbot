@@ -1,26 +1,34 @@
 #!/usr/bin/env bash
+MAIN_DIR=$(pwd)
+CHATBOT_DIR="${MAIN_DIR}/trivia-chatbot"
 
-# Activate the virtual environment, if present
+train_model () {
+    cd "$CHATBOT_DIR" && rasa train
+    cd "$MAIN_DIR"
+}
+
+run_rasa_server () {
+    cd "$CHATBOT_DIR"
+    rasa run actions &  # Start Rasa action server in the background
+    python -m webbrowser "../demo-webpage.html"  # Open demo page in browser
+    rasa run --cors="*"  # Start the rasa server
+}
+
+# Activate virtual environment
 if [ -d venv ]
     then
         source venv/bin/activate
+    else
+        echo -e "Creating a virtual environment and installing dependencies...\n"
+        python3.9 -m venv venv  # Current latest supported version.
+        source venv/bin/activate
+        pip install -U pip
+        pip install -r requirements.txt
 fi
 
-cd trivia-chatbot
-
-# Train the chatbot if no model is present
-if [ ! -d models ]
-    then rasa train
+# Ensure a trained model is available
+if [ ! -d "${CHATBOT_DIR}/models" ]; then
+    train_model
 fi
 
-# Start the action server in the background
-rasa run actions &
-
-# Open the demo web-page in a browser
-python -m webbrowser "../demo-webpage.html"
-
-# Start the rasa server
-rasa run --cors="*"
-
-# Return to chatbot home "jokes-and-trivia-chatbot"
-cd ..
+run_rasa_server
