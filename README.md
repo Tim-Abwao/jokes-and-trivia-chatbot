@@ -16,18 +16,7 @@ A simple chatbot that's fun to talk to. Powered by [Rasa][rasa].
     cd jokes-and-trivia-chatbot
     ```
 
-2. Create a virtual environment, and install the required packages:
-
-    >**NOTE:** *Rasa* only supports python3.7 to python3.9 at time of writing.
-
-    ```bash
-    python3.9 -m venv venv
-    source venv/bin/activate
-    pip install -U pip
-    pip install rasa
-    ```
-
-3. Use `run.sh` to launch the chatbot:
+2. Use `run.sh` to launch the chatbot:
 
     ```bash
     bash run.sh
@@ -35,9 +24,10 @@ A simple chatbot that's fun to talk to. Powered by [Rasa][rasa].
 
     The script:
 
-    - Starts the *rasa action server*
-    - Opens the demo web-page
-    - Starts the *rasa server* (might take a while).
+    - activates a virtual environment with dependencies
+    - starts the *rasa action server*
+    - opens the demo web-page
+    - starts the *rasa server* (might take a while).
 
 ## Deployment Options
 
